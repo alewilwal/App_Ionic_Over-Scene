@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { OverSceneApiService } from '../services/oversceneapi.service';
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -22,6 +25,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    OverSceneApiService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
